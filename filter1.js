@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     source.connect(filter);
     filter.connect(analyser);
+    // source.connect(audioCtx.destination);
     analyser.connect(audioCtx.destination);
 
     const canvas = document.getElementById("oscilloscope");
@@ -56,12 +57,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     draw();
 
-    const freqSlider = document.getElementById("freq-slider");
-    freqSlider.addEventListener("input", function(){
+    function F1set(){
         const minFreq = 20;
         const maxFreq = 20000;
         const sliderValue = freqSlider.value;
-        
         // Convert slider value to a logarithmic scale
         const logMinFreq = Math.log10(minFreq);
         const logMaxFreq = Math.log10(maxFreq);
@@ -71,7 +70,16 @@ document.addEventListener("DOMContentLoaded", function(){
         const scaledValue = Math.pow(10, logValue);
         
         filter.frequency.value = scaledValue;
+
+    }
+    const freqSlider = document.getElementById("freq-slider");
+    freqSlider.addEventListener("input", function(){
+        
+        F1set();
+        
     });
+
+    F1set();
 
 
 });

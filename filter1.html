@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="eq1.js"></script>
+    <script src="filter1.js"></script>
     <style>
         html, body {
             height: 100%;
             margin: 0;
             position: relative;
             color: white;
+        }
+        #player h1 {
+            font-size: 2.5em; /* Adjust the size as needed */
+            font-weight: bold; /* Optional: makes the text bold */
         }
         body {
             background-color: #122219;
@@ -40,12 +44,12 @@
     </div>
 
     <div id="player" class="section h-80 flex flex-col justify-around items-center">
-        <h1 class="rounded p-3">player</h1>
+        <h1 class="">nazwa </h1>
         <audio id="audio" controls>
             <source src="phone from china.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-        <input type="range" id="freq-slider" min="20" max="20000" step="0.01" value="0.5">
+        <input type="range" id="freq-slider" min="20" max="20000" step="0.01" value="9100">
     </div>
     <div id="eq" class="section">
         eq1
