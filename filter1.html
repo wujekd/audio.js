@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="eq1.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            position: relative;
+            color: white;
+        }
+        body {
+            background-color: #122219;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; 
+        }
+        .canv {
+            position: absolute;
+            bottom: 0;
+        }
+        .section {
+            background-color: #1c3c27;
+            padding: 1.2rem;
+            margin: 0.7rem;
+        }
+        #canv {
+            background-color: #1c3c27;
+        }
+    </style>
+</head>
+<body>
+    <div id="canv" class="canv p-2 rounded-t-2xl">
+        <canvas id="oscilloscope" width="600" height="150"></canvas>
+    </div>
+
+    <div id="player" class="section h-80 flex flex-col justify-around items-center">
+        <h1 class="rounded p-3">player</h1>
+        <audio id="audio" controls>
+            <source src="phone from china.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <input type="range" id="freq-slider" min="20" max="20000" step="0.01" value="0.5">
+    </div>
+    <div id="eq" class="section">
+        eq1
+    </div>
+</body>
+</html>
+
